@@ -54,7 +54,7 @@ The trade-off: the output is an image-based PDF, so **text is not selectable/sea
 
 ```bash
 # from source
-git clone https://github.com/zhaoyangjia/webpage2pdf.git
+git clone https://github.com/itamaker/webpage2pdf.git
 cd webpage2pdf
 pip install .
 
@@ -180,7 +180,7 @@ Issues and PRs are welcome. Ideas on the roadmap:
 Dev setup:
 
 ```bash
-git clone https://github.com/zhaoyangjia/webpage2pdf.git
+git clone https://github.com/itamaker/webpage2pdf.git
 cd webpage2pdf
 pip install -e .
 python3 -m webpage2pdf https://example.com -o /tmp/smoke.pdf
