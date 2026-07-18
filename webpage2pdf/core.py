@@ -70,7 +70,7 @@ def wait_for_page(driver, extra_wait=3.0):
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
     except Exception:
-        log("  警告: 页面 30 秒内未完全加载，继续导出当前内容")
+        log("  warning: page did not fully load within 30s, exporting as-is")
     if extra_wait > 0:
         time.sleep(extra_wait)
 
@@ -97,8 +97,10 @@ def capture_full_page(driver, width, scale):
         "return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)"
     )
     if not full_height:
-        raise RuntimeError("页面高度为 0，无法截图（页面可能未正常加载）")
-    log(f"  页面高度: {full_height}px")
+        raise RuntimeError(
+            "Page height is 0, nothing to capture (the page may have failed to load)"
+        )
+    log(f"  page height: {full_height}px")
 
     screenshots = []
     for y_start in range(0, full_height, _CHUNK_HEIGHT):
@@ -112,7 +114,7 @@ def capture_full_page(driver, width, scale):
         })
         img = Image.open(io.BytesIO(base64.b64decode(result["data"]))).convert("RGB")
         screenshots.append(img)
-        log(f"  截图: {y_start}~{y_start + chunk_h}px")
+        log(f"  captured: {y_start}-{y_start + chunk_h}px")
 
     full_img = Image.new(
         "RGB", (screenshots[0].width, sum(i.height for i in screenshots)), "white"

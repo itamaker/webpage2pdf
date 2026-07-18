@@ -2,7 +2,7 @@
 
 **Pixel-perfect webpage → paginated PDF**, powered by headless Chrome screenshots.
 
-[中文文档](README.zh-CN.md) · [License: MIT](LICENSE)
+[License: MIT](LICENSE)
 
 `webpage2pdf` captures a full-length, high-resolution screenshot of any web page — exactly as Chrome renders it — then slices it into clean A4/Letter pages with a professional header and footer:
 
@@ -145,7 +145,7 @@ webpage2pdf https://example.com --width 800
 
 ## Troubleshooting
 
-**“无法启动 Chrome / cannot find Chrome”**
+**"Failed to launch Chrome / cannot find Chrome"**
 Install Google Chrome, or point at the binary explicitly:
 `webpage2pdf URL --chrome-binary "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"`
 
