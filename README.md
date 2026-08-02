@@ -62,10 +62,6 @@ pip install .
 pipx install .
 ```
 
-## Claude Code skill
-
-This repo ships a [Claude Code](https://claude.com/claude-code) skill at [`.claude/skills/webpage-to-pdf/`](.claude/skills/webpage-to-pdf/). Clone the repo and Claude picks it up automatically — just ask it to save, export, or archive a page as a PDF and it drives the CLI for you.
-
 ## Quick start
 
 ```bash
