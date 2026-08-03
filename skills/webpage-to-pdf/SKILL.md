@@ -13,10 +13,10 @@ This skill is self-contained: the CLI's source ships inside this skill folder, s
 
 ## 1. Confirm the CLI is available
 
-Run `webpage2pdf --version`. If the command is not found, install this skill's bundled copy:
+Run `webpage2pdf --version`. If the command is not found, install this skill's bundled copy from this skill's own directory (the folder containing this `SKILL.md`):
 
 ```bash
-python3 -m pip install -e ~/.claude/skills/webpage-to-pdf
+python3 -m pip install -e /absolute/path/to/this/skill/directory
 ```
 
 Requires Google Chrome; Selenium Manager fetches the matching chromedriver automatically. Done when `webpage2pdf --version` prints a version.
@@ -36,7 +36,7 @@ Requires Google Chrome; Selenium Manager fetches the matching chromedriver autom
 
 **Page requires signing in first**: `--login` opens a visible Chrome window and blocks on a terminal prompt waiting for Enter — that can't be driven through a non-interactive command. Ask the user to run it themselves, e.g. suggest they type `!webpage2pdf URL --login` so they can sign in and press Enter. For repeat visits to the same site, `--user-data-dir DIR` reuses that signed-in session headlessly afterward.
 
-Full flag reference, ready-made recipes, and troubleshooting live in [REFERENCE.md](REFERENCE.md).
+Full flag reference, ready-made recipes, and troubleshooting live in [references/REFERENCE.md](references/REFERENCE.md).
 
 ## 3. Run it
 
@@ -48,4 +48,4 @@ Without `-o`, the output filename is derived from the URL. Done when the command
 
 ## 4. Report and recover
 
-Tell the user the output path and page count. If the command fails or errors, match the error text against [REFERENCE.md](REFERENCE.md)'s Troubleshooting table, apply the fix, and retry once before asking the user for guidance.
+Tell the user the output path and page count. If the command fails or errors, match the error text against [references/REFERENCE.md](references/REFERENCE.md)'s Troubleshooting table, apply the fix, and retry once before asking the user for guidance.

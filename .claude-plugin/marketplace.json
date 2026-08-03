@@ -1,0 +1,21 @@
+{
+  "name": "itamaker-webpage-to-pdf-skill",
+  "owner": {
+    "name": "Jonny"
+  },
+  "metadata": {
+    "description": "Reusable webpage-to-PDF skill from itamaker",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "itamaker-webpage-to-pdf-skill",
+      "description": "Export live webpages to pixel-perfect paginated PDFs via headless Chrome screenshots",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/webpage-to-pdf"
+      ]
+    }
+  ]
+}

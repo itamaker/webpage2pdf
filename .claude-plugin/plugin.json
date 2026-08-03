@@ -1,0 +1,5 @@
+{
+  "name": "webpage-to-pdf-skill",
+  "description": "Export live webpages to pixel-perfect paginated PDFs via headless Chrome screenshots",
+  "version": "1.0.0"
+}
